@@ -31,7 +31,7 @@ flowchart LR
 ### File Conventions Inside Each Problem Directory
 Every problem is contained within its own dedicated folder:
 ```text
-0001_two_sum/
+01_0001_e_two_sum/
 ├── README.md        # Problem prompt, evolution chain (Step 1 -> Step N), and Python ➔ C++ Bridge notes
 ├── solution.py      # Contains SolutionV1, SolutionV2, ... SolutionOptimal
 └── solution.cpp     # Modern C++ counterpart mirroring each version with memory/cache insights

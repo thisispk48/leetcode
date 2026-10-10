@@ -64,7 +64,7 @@ leetcode/
 │   ├── 01_arrays_two_pointers_prefix_sums/
 │   │   ├── README.md                            # Tier 2: Category Theory & Retrospective README
 │   │   │
-│   │   ├── 01_0001_two_sum/                     # Tier 3: Problem Directory (<seq>_<lc_id>_<slug>)
+│   │   ├── 01_0001_e_two_sum/                   # Tier 3: Problem Directory (<seq>_<lc_id>_<diff>_<slug>)
 │   │   │   ├── README.md                        # Problem Evolution & C++ Bridge
 │   │   │   ├── solution.py                      # Multi-class evolutionary Python solutions
 │   │   │   └── solution.cpp                     # Multi-class evolutionary C++ solutions
@@ -73,8 +73,9 @@ leetcode/
 ---
 
 ### Folder Naming Convention
-* **Strict Sequential Prefix**: Every problem folder must be named `<seq>_<lc_id>_<slug>/` (e.g. `01_0001_two_sum/`, `02_0167_two_sum_ii_sorted_array/`).
-* **Why**: Preserves the exact pedagogical order in file trees and GitHub rather than sorting by arbitrary LeetCode release dates.
+* **Strict Sequential & Difficulty Prefix**: Every problem folder must be named `<seq>_<lc_id>_<diff>_<slug>/` where `<diff>` is `e` (Easy), `m` (Medium), or `h` (Hard).
+  * Example: `01_0001_e_two_sum/`, `02_0167_m_two_sum_ii_sorted_array/`, `21_0042_h_trapping_rain_water/`.
+* **Why**: Preserves the exact pedagogical order in file trees and GitHub while making difficulty immediately evident when conceptual groups mix difficulty levels.
 
 ---
 
