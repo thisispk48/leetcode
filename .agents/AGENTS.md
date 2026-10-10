@@ -98,20 +98,26 @@ Must strictly be divided into two distinct sections:
 
 ---
 
-### Tier 4: Problem `README.md` (`<problem_id>_<slug>/README.md`)
-Must strictly follow this 4-section layout:
+### Tier 3: Problem `README.md` (`<problem_id>_<slug>/README.md`)
+Must strictly follow this 6-section layout:
 1. **Problem Statement & Constraints**
-2. **Python Flow:**
+2. **MySolution Analysis & Verdict:**
+   * Praveen's raw code submission.
+   * Strengths, edge cases, and any bugs or bottlenecks diagnosed.
+   * **The Verdict:** Clear placement of where `MySolution` lands relative to the evolutionary ladder (e.g. *"Matches V1 Brute Force"* or *"Conceptionally jumped to V3 Two Pointers with an index-comparison bug"*).
+3. **Python Flow (The Evolutionary Ladder):**
    * **Summary Evolution Table:** Columns: `Version | Implementation | Time | Memory | Core Rationale`.
-   * **Nuances & Step-by-Step Evolution:** Narrative walkthrough of each step (`V1`, `V1 ➔ V2`, `V2 ➔ V3`, `V3 ➔ V4`), explaining what changed, why, and the exact operation count / complexity impact.
-3. **C++ Flow:**
+   * **Nuances & Step-by-Step Evolution:** Narrative walkthrough of each step (`V1 (Brute Force) ➔ V2 ➔ ... ➔ Vn (Optimal)`), explaining what changed, why, and the exact operation count / complexity impact.
+4. **C++ Flow:**
    * **Summary Systems Table:** Columns: `Version | Implementation | Time | Memory | Systems / Memory Rationale`.
    * **Nuances & Systems Deep Dive:** Concrete analysis of:
      - Zero-copy argument passing (`const std::vector<int>&`).
      - Memory layout differences (28-byte `PyObject` heap pointers vs. 4-byte contiguous cache primitives).
      - Safe STL access vs accidental key insertion.
      - Hash table rehashing bottlenecks and `.reserve()` capacity pre-allocation.
-4. **Conclusions & Key Takeaways:**
+5. **Parity Audit (`solution.py` $\leftrightarrow$ `solution.cpp`):**
+   * Dedicated verification table explicitly comparing each class in `solution.py` against its counterpart in `solution.cpp` (`MySolution`, `SolutionV1_...`, etc.) with parity status and notes.
+6. **Conclusions & Key Takeaways:**
    * Algorithmic principles learned.
    * Systems / C++ insights locked in.
 
@@ -120,27 +126,46 @@ Must strictly follow this 4-section layout:
 ## 💻 4. Code Standards (`solution.py` and `solution.cpp`)
 
 ### `solution.py`
-* Store all evolutionary versions inside the single file as cleanly named classes:
+* **`MySolution` is ALWAYS Praveen's Raw Code:**  
+  The file begins with `class MySolution:` containing Praveen's exact submission (working, bugged, or unoptimized).
+* **The Independent Evolutionary Ladder (V1 $\to$ Vn):**  
+  Follows `MySolution` with a clean, strictly ascending evolutionary ladder from naive baseline to optimal:
   ```python
-  class SolutionV1_CartesianProduct: ...
-  class SolutionV2_UpperTrianglePruning: ...
-  class SolutionV3_TwoPassHashMap: ...
-  class SolutionV4_OnePassHashMap: ...
+  # =====================================================================
+  # 1. PRAVEEN'S SUBMISSION
+  # =====================================================================
+  class MySolution:
+      """Praveen's exact initial code and thought process."""
+      ...
+
+  # =====================================================================
+  # 2. INDEPENDENT EVOLUTIONARY LADDER (V1 Brute Force -> Vn Optimal)
+  # =====================================================================
+  class SolutionV1_BruteForce: ...
+  class SolutionV2_Intermediate: ...
+  class SolutionV3_Optimal: ...
   
-  Solution = SolutionV4_OnePassHashMap  # Default export
+  Solution = SolutionV3_Optimal  # Default export
   ```
 * Every class must have a docstring documenting: Approach, What changed, Invariants, Time Complexity, and Space Complexity.
 
 ### `solution.cpp`
-* Store all evolutionary versions inside the single file matching Python, plus any hardware/systems optimizations:
+* **Full Parity with `solution.py`:** Must begin with `class MySolution` (the direct C++ translation of Praveen's initial submission, preserving any bugs or baseline characteristics).
+* Mirrors the independent evolutionary ladder `SolutionV1_...` through `SolutionVn_...`, plus low-level systems tuning:
   ```cpp
-  class SolutionV1_CartesianProduct { ... };
-  class SolutionV2_UpperTrianglePruning { ... };
-  class SolutionV3_TwoPassHashMap { ... };
-  class SolutionV4_OnePassHashMap { ... };
-  class SolutionV5_SystemsOptimized { ... };
+  // =====================================================================
+  // 1. PRAVEEN'S SUBMISSION
+  // =====================================================================
+  class MySolution { ... };
+
+  // =====================================================================
+  // 2. INDEPENDENT EVOLUTIONARY LADDER (V1 Brute Force -> Vn Optimal)
+  // =====================================================================
+  class SolutionV1_BruteForce { ... };
+  class SolutionV2_Intermediate { ... };
+  class SolutionV3_Optimal { ... };
   
-  using Solution = SolutionV5_SystemsOptimized;  // Default alias
+  using Solution = SolutionV3_Optimal;  // Default alias
   ```
 * Include educational comments highlighting systems considerations (`const &`, cache locality, `reserve()`, iterator mechanics).
 
@@ -150,9 +175,9 @@ Must strictly follow this 4-section layout:
 
 For every single problem, adhere to this exact sequence:
 1. **Praveen Solves First:** Praveen implements his initial Python solution and shares it.
-2. **Review & Isolate the Next Step:** Praise working logic, identify the immediate redundancy or bottleneck, and present **one single improvement** with a complexity table.
-3. **Iterate Towards Optimal:** Guide step-by-step through Python iterations until the optimal algorithmic solution is reached.
+2. **Review & Diagnose MySolution:** Praise working logic, identify bottlenecks or bugs, and deliver a verdict on where `MySolution` stands.
+3. **Step-by-Step Evolutionary Guidance:** Guide through the independent evolutionary ladder (`V1` Brute Force $\to$ `Vn` Optimal) one isolated change at a time.
 4. **Bridge to C++:** Provide the corresponding C++ implementations, explaining memory management and systems differences.
-5. **Populate Files:** Write `solution.py`, `solution.cpp`, and the structured problem `README.md`.
+5. **Populate Files:** Write `solution.py` (with `MySolution` + `V1..Vn`), `solution.cpp`, and the structured problem `README.md`.
 6. **Update Progress Tracker:** Update status, metrics, and problem log in [`PROGRESS.md`](file:///PROGRESS.md).
 7. **Leave Files Unstaged:** Notify Praveen that files are ready for his inspection and git commit.

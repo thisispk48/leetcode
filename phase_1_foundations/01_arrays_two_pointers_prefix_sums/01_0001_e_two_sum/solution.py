@@ -2,10 +2,33 @@
 0001. Two Sum
 LeetCode: https://leetcode.com/problems/two-sum/
 
-Evolutionary Implementations from V1 (Brute Force) to V4 (Optimal Single-Pass).
+1. Praveen's MySolution
+2. Independent Evolutionary Ladder from V1 (Brute Force) to V4 (Optimal Single-Pass)
 """
 
 
+# =====================================================================
+# 1. PRAVEEN'S SUBMISSION
+# =====================================================================
+class MySolution:
+    """
+    Praveen's Initial Submission:
+    - Intuition: Full Cartesian product with self-pairing guard (i != j).
+    - Status: Correct logic, passes test cases.
+    - Complexity: O(N^2) Time, O(1) Memory.
+    - Verdict: Matches V1 Brute Force baseline.
+    """
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
+        for i in range(len(nums)):
+            for j in range(len(nums)):
+                if (i != j) and (nums[i] + nums[j] == target):
+                    return [i, j]
+        return []
+
+
+# =====================================================================
+# 2. INDEPENDENT EVOLUTIONARY LADDER (V1 -> V4)
+# =====================================================================
 class SolutionV1_CartesianProduct:
     """
     V1: Naive Full Cartesian Grid Search.

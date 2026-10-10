@@ -22,7 +22,33 @@ You may assume that each input would have **exactly one solution**, and you may 
 
 ---
 
-## 2. Python Flow
+## 2. MySolution Analysis & Verdict
+
+### Praveen's Submission
+```python
+class MySolution:
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
+        for i in range(len(nums)):
+            for j in range(len(nums)):
+                if (i != j) and (nums[i] + nums[j] == target):
+                    return [i, j]
+```
+
+### Diagnosis
+1. **Strengths:** 
+   * Fully correct logic that passes all base test cases.
+   * Accurately identified the self-pairing constraint and handled it using the `(i != j)` guard condition.
+2. **Bottlenecks:**
+   * **Self-pairing branch:** Evaluates `i != j` on every single iteration across the $N \times N$ matrix.
+   * **Symmetric duplication:** Addition is commutative ($A + B == B + A$). Checking $(i=0, j=1)$ and later checking $(i=1, j=0)$ performs 100% duplicate computations.
+   * **Asymptotic limit:** $O(N^2)$ time with no auxiliary memory ($O(1)$ space).
+
+### The Verdict
+> **`MySolution` directly corresponds to `V1 (Cartesian Grid Search)`** in the evolutionary ladder. It establishes the baseline brute-force intuition from which all subsequent optimizations originate.
+
+---
+
+## 3. Python Flow (The Evolutionary Ladder)
 
 ### Summary Evolution Table
 
@@ -37,7 +63,7 @@ You may assume that each input would have **exactly one solution**, and you may 
 
 ### Nuances & Step-by-Step Python Evolution
 
-#### V1: Cartesian Grid Search (Your Initial Solution)
+#### V1: Cartesian Grid Search
 * **Logic:** Two nested loops over `range(len(nums))`.
 * **Nuance / Bottleneck:**
   1. **Self-Pairing:** Checks `(0, 0)`, `(1, 1)`, etc. Requires an explicit `if (i != j)` branch check to prevent adding an element to itself.
@@ -65,7 +91,7 @@ You may assume that each input would have **exactly one solution**, and you may 
 
 ---
 
-## 3. C++ Flow
+## 4. C++ Flow
 
 ### Summary Systems Table
 
@@ -103,7 +129,20 @@ You may assume that each input would have **exactly one solution**, and you may 
 
 ---
 
-## 4. Conclusions & Key Takeaways
+## 5. Parity Audit (`solution.py` ⟷ `solution.cpp`)
+
+| Evolutionary Step | `solution.py` Class | `solution.cpp` Class | Parity Status | Implementation Notes |
+| :--- | :--- | :--- | :---: | :--- |
+| **Praveen's Submission** | `MySolution` | `MySolution` | ✅ Exact Parity | Full Cartesian product with `i != j` self-pairing guard. |
+| **V1: Brute Force** | `SolutionV1_CartesianProduct` | `SolutionV1_CartesianProduct` | ✅ Exact Parity | Exact baseline loop match ($O(N^2)$). |
+| **V2: Symmetry Pruning** | `SolutionV2_UpperTrianglePruning` | `SolutionV2_UpperTrianglePruning` | ✅ Exact Parity | Commutative symmetry pruning with $j = i + 1$. |
+| **V3: Two-Pass Map** | `SolutionV3_TwoPassHashMap` | `SolutionV3_TwoPassHashMap` | ✅ Exact Parity | Hash table complement lookup via `dict` vs `std::unordered_map`. |
+| **V4: Single-Pass Optimal** | `SolutionV4_OnePassHashMap` | `SolutionV4_OnePassHashMap` | ✅ Exact Parity | Single-pass interleaved lookup/insertion. |
+| **V5: Systems Tuning** | *(Python dict auto-sized)* | `SolutionV5_SystemsOptimized` | 🚀 C++ Systems Extension | Low-level C++ hardware optimization using `.reserve(N)` to eliminate bucket rehashing. |
+
+---
+
+## 6. Conclusions & Key Takeaways
 
 1. **The Fundamental Law of Space-Time Trade-offs:**  
    To eliminate a nested search loop from `O(N^2)` to `O(N)`, you must spend `O(N)` memory in the form of a Hash Map.

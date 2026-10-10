@@ -2,18 +2,18 @@
  * 0001. Two Sum
  * LeetCode: https://leetcode.com/problems/two-sum/
  * 
- * Evolutionary Implementations from V1 (Brute Force) to V5 (Systems / Pre-allocated Buckets).
+ * 1. Praveen's MySolution (C++ Equivalent)
+ * 2. Independent Evolutionary Ladder from V1 (Brute Force) to V5 (Systems Optimized)
  */
 
 #include <vector>
 #include <unordered_map>
 
 // ============================================================================
-// V1: Naive Full Cartesian Grid Search
+// 1. PRAVEEN'S SUBMISSION
 // ============================================================================
-class SolutionV1_CartesianProduct {
+class MySolution {
 public:
-    // const std::vector<int>& avoids an O(N) copy of the input vector
     std::vector<int> twoSum(const std::vector<int>& nums, int target) {
         int n = nums.size();
         for (int i = 0; i < n; ++i) {
@@ -28,14 +28,32 @@ public:
 };
 
 // ============================================================================
-// V2: Upper Triangular Pruning
+// 2. INDEPENDENT EVOLUTIONARY LADDER (V1 -> V5)
 // ============================================================================
+
+// V1: Naive Full Cartesian Grid Search
+class SolutionV1_CartesianProduct {
+public:
+    std::vector<int> twoSum(const std::vector<int>& nums, int target) {
+        int n = nums.size();
+        for (int i = 0; i < n; ++i) {
+            for (int j = 0; j < n; ++j) {
+                if (i != j && nums[i] + nums[j] == target) {
+                    return {i, j};
+                }
+            }
+        }
+        return {};
+    }
+};
+
+// V2: Upper Triangular Pruning
 class SolutionV2_UpperTrianglePruning {
 public:
     std::vector<int> twoSum(const std::vector<int>& nums, int target) {
         int n = nums.size();
         for (int i = 0; i < n; ++i) {
-            for (int j = i + 1; j < n; ++j) { // Start j from i + 1
+            for (int j = i + 1; j < n; ++j) {
                 if (nums[i] + nums[j] == target) {
                     return {i, j};
                 }
@@ -45,21 +63,17 @@ public:
     }
 };
 
-// ============================================================================
 // V3: Two-Pass Hash Map
-// ============================================================================
 class SolutionV3_TwoPassHashMap {
 public:
     std::vector<int> twoSum(const std::vector<int>& nums, int target) {
         std::unordered_map<int, int> lookup;
         int n = nums.size();
 
-        // Pass 1: Build map
         for (int i = 0; i < n; ++i) {
             lookup[nums[i]] = i;
         }
 
-        // Pass 2: Query complement
         for (int i = 0; i < n; ++i) {
             int complement = target - nums[i];
             auto it = lookup.find(complement);
@@ -71,9 +85,7 @@ public:
     }
 };
 
-// ============================================================================
 // V4: Single-Pass Interleaved Hash Map (Optimal Algorithm)
-// ============================================================================
 class SolutionV4_OnePassHashMap {
 public:
     std::vector<int> twoSum(const std::vector<int>& nums, int target) {
@@ -92,19 +104,12 @@ public:
     }
 };
 
-// ============================================================================
 // V5: Systems & Cache Optimized (Pre-allocated Buckets)
-// ============================================================================
 class SolutionV5_SystemsOptimized {
 public:
     std::vector<int> twoSum(const std::vector<int>& nums, int target) {
         std::unordered_map<int, int> seen;
-
-        // SYSTEMS INSIGHT:
-        // By default, std::unordered_map starts small (e.g. 8 buckets).
-        // Calling .reserve(N) pre-allocates bucket capacity up front,
-        // eliminating expensive dynamic heap re-allocations and rehashing.
-        seen.reserve(nums.size());
+        seen.reserve(nums.size()); // Pre-allocate buckets to eliminate rehashing
 
         int n = nums.size();
         for (int i = 0; i < n; ++i) {
@@ -113,7 +118,7 @@ public:
             if (it != seen.end()) {
                 return {it->second, i};
             }
-            seen.emplace(nums[i], i); // emplace avoids temporary pair construction
+            seen.emplace(nums[i], i);
         }
         return {};
     }

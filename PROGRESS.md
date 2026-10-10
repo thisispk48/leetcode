@@ -7,8 +7,8 @@
 
 ## 📊 High-Level Metrics
 
-* **Total Solved**: 1 / 400 (`0.25%`)
-* **Phase 1 (Foundations)**: 1 / 200 (`0.5%`)
+* **Total Solved**: 2 / 400 (`0.5%`)
+* **Phase 1 (Foundations)**: 2 / 200 (`1.0%`)
 * **Phase 2 (Speciality)**: 0 / 200 (`0.0%`)
 
 ---
@@ -16,8 +16,8 @@
 ## 🧭 Phase 1 Category Breakdown
 
 | # | Category | Solved | Target | Progress | Status |
-| :-: | :--- | :-: | :-: | :---: | :---: |
-| **01** | [Arrays, Two Pointers & Prefix Sums](file:///phase_1_foundations/01_arrays_two_pointers_prefix_sums/README.md) | 1 | 25 | 4.0% | 🟡 In Progress |
+| :-: | :--- | :-: | :-: | :---: | :--- |
+| **01** | [Arrays, Two Pointers & Prefix Sums](file:///phase_1_foundations/01_arrays_two_pointers_prefix_sums/README.md) | 2 | 25 | 8.0% | 🟡 In Progress |
 | **02** | Sliding Window & Deque | 0 | 25 | 0.0% | ⚪ Not Started |
 | **03** | Fast Lookups (Hash Maps & Sets) | 0 | 25 | 0.0% | ⚪ Not Started |
 | **04** | Binary Search & Search Space | 0 | 25 | 0.0% | ⚪ Not Started |
@@ -25,7 +25,7 @@
 | **06** | Binary Trees & Traversals | 0 | 25 | 0.0% | ⚪ Not Started |
 | **07** | Heaps & Priority Queues | 0 | 25 | 0.0% | ⚪ Not Started |
 | **08** | Grid & Graph Traversal | 0 | 25 | 0.0% | ⚪ Not Started |
-| **Total** | **Phase 1 Total** | **1** | **200** | **0.5%** | 🟡 Active |
+| **Total** | **Phase 1 Total** | **2** | **200** | **1.0%** | 🟡 Active |
 
 ---
 
@@ -49,3 +49,4 @@
 | ID | Problem Name | Phase | Category | Difficulty | Python Runtime | Memory | C++ Implementation | Date Solved | Core Concept / Invariant |
 | :-: | :--- | :-: | :-: | :-: | :-: | :-: | :---: | :-: | :--- |
 | `0001` | [Two Sum](file:///phase_1_foundations/01_arrays_two_pointers_prefix_sums/01_0001_e_two_sum/README.md) | Phase 1 | Cat 01 | Easy | 0 ms (100%) | 20.45 MB | `SolutionV5_SystemsOptimized` | 2026-10-10 | Single-pass hash map with pre-allocated `.reserve()` bucket optimization |
+| `0167` | [Two Sum II - Input Array Is Sorted](file:///phase_1_foundations/01_arrays_two_pointers_prefix_sums/02_0167_m_two_sum_ii_sorted_array/README.md) | Phase 1 | Cat 01 | Medium | 3 ms (87.6%) | 22.34 MB | `SolutionV4_TwoPointersOptimal` | 2026-10-11 | Converging two-pointer monotonic boundary contraction in O(1) space |
