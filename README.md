@@ -72,7 +72,7 @@ Each category features **25 problems** (7 Easy, 13 Medium, 5 Hard). Below is the
 
 | ID | Problem Name | Difficulty | Core Pattern | Status |
 | :---: | :--- | :---: | :--- | :---: |
-| `0001` | [Two Sum](https://leetcode.com/problems/two-sum/) | Easy | Hash Map Complement / Space-Time Trade-off | 🟡 In Progress |
+| `0001` | [Two Sum](https://leetcode.com/problems/two-sum/) | Easy | Hash Map Complement / Space-Time Trade-off | ✅ Done (0 ms / 100%) |
 | `0167` | [Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/) | Easy | Converging Two Pointers ($L \to, \gets R$) | ⚪ Todo |
 | `0283` | [Move Zeroes](https://leetcode.com/problems/move-zeroes/) | Easy | Fast & Slow (Read/Write) Pointers | ⚪ Todo |
 | `0026` | [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) | Easy | In-place Boundary Maintenance | ⚪ Todo |
