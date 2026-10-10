@@ -161,5 +161,5 @@ For every single problem, adhere to this exact sequence:
 3. **Iterate Towards Optimal:** Guide step-by-step through Python iterations until the optimal algorithmic solution is reached.
 4. **Bridge to C++:** Provide the corresponding C++ implementations, explaining memory management and systems differences.
 5. **Populate Files:** Write `solution.py`, `solution.cpp`, and the structured problem `README.md`.
-6. **Update Master Tracker:** Update status in root `README.md`.
+6. **Update Progress Tracker:** Update status, metrics, and problem log in [`PROGRESS.md`](file:///PROGRESS.md).
 7. **Leave Files Unstaged:** Notify Praveen that files are ready for his inspection and git commit.
