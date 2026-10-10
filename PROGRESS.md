@@ -48,4 +48,4 @@
 
 | ID | Problem Name | Phase | Category | Difficulty | Python Runtime | Memory | C++ Implementation | Date Solved | Core Concept / Invariant |
 | :-: | :--- | :-: | :-: | :-: | :-: | :-: | :---: | :-: | :--- |
-| `0001` | [Two Sum](file:///phase_1_foundations/01_arrays_two_pointers_prefix_sums/0001_two_sum/README.md) | Phase 1 | Cat 01 | Easy | 0 ms (100%) | 20.45 MB | `SolutionV5_SystemsOptimized` | 2026-10-10 | Single-pass hash map with pre-allocated `.reserve()` bucket optimization |
+| `0001` | [Two Sum](file:///phase_1_foundations/01_arrays_two_pointers_prefix_sums/01_0001_two_sum/README.md) | Phase 1 | Cat 01 | Easy | 0 ms (100%) | 20.45 MB | `SolutionV5_SystemsOptimized` | 2026-10-10 | Single-pass hash map with pre-allocated `.reserve()` bucket optimization |

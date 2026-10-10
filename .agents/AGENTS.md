@@ -53,46 +53,38 @@ We are **not** training for generic web CRUD / fullstack interview patterns. We 
 
 ## 📁 3. Strict Documentation & README Standards
 
-The repository follows a strict 4-tier documentation hierarchy:
+The repository follows a clean 3-tier documentation hierarchy with a dedicated live tracker:
 
 ```text
 leetcode/
-├── README.md                                    # Tier 1: Master Laboratory README
+├── README.md                                    # Tier 1: Master Curriculum & Strategy
+├── PROGRESS.md                                  # Live Tracker: Metrics & Solved Problem Logs
 │
 ├── phase_1_foundations/
-│   ├── README.md                                # Tier 2: Phase Overview README
-│   │
 │   ├── 01_arrays_two_pointers_prefix_sums/
-│   │   ├── README.md                            # Tier 3: Category Theory & Retrospective README
+│   │   ├── README.md                            # Tier 2: Category Theory & Retrospective README
 │   │   │
-│   │   ├── 0001_two_sum/                        # Tier 4: Problem-Specific Directory
-│   │   │   ├── README.md                        # Tier 4: Problem Evolution & Bridge README
+│   │   ├── 01_0001_two_sum/                     # Tier 3: Problem Directory (<seq>_<lc_id>_<slug>)
+│   │   │   ├── README.md                        # Problem Evolution & C++ Bridge
 │   │   │   ├── solution.py                      # Multi-class evolutionary Python solutions
 │   │   │   └── solution.cpp                     # Multi-class evolutionary C++ solutions
 ```
 
 ---
 
-### Tier 1: Master Root `README.md`
-* Must contain:
-  1. Strategic Vision and the 4 Target Archetypes.
-  2. The Evolutionary Engineering Methodology.
-  3. Accompanying Reading Stack with role descriptions.
-  4. The 400-Problem Master Scope (200 Phase 1 + 200 Phase 2).
-  5. The complete curriculum tables across all 8 Phase 1 categories with ID, clickable LeetCode link, difficulty, core pattern, and status checkbox.
-  6. Phase 2 Preview.
+### Folder Naming Convention
+* **Strict Sequential Prefix**: Every problem folder must be named `<seq>_<lc_id>_<slug>/` (e.g. `01_0001_two_sum/`, `02_0167_two_sum_ii_sorted_array/`).
+* **Why**: Preserves the exact pedagogical order in file trees and GitHub rather than sorting by arbitrary LeetCode release dates.
 
 ---
 
-### Tier 2: Phase `README.md` (`phase_1_foundations/README.md`)
-* Must contain:
-  1. Phase objective: Generalist screening defense, core DSA patterns, and the Python ➔ C++ bridge.
-  2. Category roadmap & cross-links.
-  3. Milestone criteria for advancing to Phase 2.
+### Tier 1: Master Root `README.md` & `PROGRESS.md`
+* **`README.md`**: Strategic Vision, Target Archetypes, Evolutionary Methodology, Companion Reading Stack, 400-Problem curriculum tables (static, decoupling status).
+* **`PROGRESS.md`**: High-level completion metrics, category-by-category breakdown, and live completed problem logs.
 
 ---
 
-### Tier 3: Category `README.md` (`phase_1_foundations/<cat>/README.md`)
+### Tier 2: Category `README.md` (`phase_1_foundations/<cat>/README.md`)
 Must strictly be divided into two distinct sections:
 * **📘 PART 1: BEFORE STARTING (Theory, Intuition & Python Tips)**
   1. *Mathematical & Levitin Framing:* Conceptual basis (e.g. discrete 1D signals, address arithmetic, Space-Time trade-offs).
