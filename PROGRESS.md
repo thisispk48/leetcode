@@ -7,8 +7,8 @@
 
 ## 📊 High-Level Metrics
 
-* **Total Solved**: 5 / 400 (`1.2%`)
-* **Phase 1 (Foundations)**: 5 / 200 (`2.5%`)
+* **Total Solved**: 6 / 400 (`1.5%`)
+* **Phase 1 (Foundations)**: 6 / 200 (`3.0%`)
 * **Phase 2 (Speciality)**: 0 / 200 (`0.0%`)
 
 ---
@@ -17,7 +17,7 @@
 
 | # | Category | Solved | Target | Progress | Status |
 | :-: | :--- | :-: | :-: | :---: | :--- |
-| **01** | [Arrays, Two Pointers & Prefix Sums](file:///phase_1_foundations/01_arrays_two_pointers_prefix_sums/README.md) | 5 | 25 | 20.0% | 🟡 In Progress |
+| **01** | [Arrays, Two Pointers & Prefix Sums](file:///phase_1_foundations/01_arrays_two_pointers_prefix_sums/README.md) | 6 | 25 | 24.0% | 🟡 In Progress |
 | **02** | Sliding Window & Deque | 0 | 25 | 0.0% | ⚪ Not Started |
 | **03** | Fast Lookups (Hash Maps & Sets) | 0 | 25 | 0.0% | ⚪ Not Started |
 | **04** | Binary Search & Search Space | 0 | 25 | 0.0% | ⚪ Not Started |
@@ -25,7 +25,7 @@
 | **06** | Binary Trees & Traversals | 0 | 25 | 0.0% | ⚪ Not Started |
 | **07** | Heaps & Priority Queues | 0 | 25 | 0.0% | ⚪ Not Started |
 | **08** | Grid & Graph Traversal | 0 | 25 | 0.0% | ⚪ Not Started |
-| **Total** | **Phase 1 Total** | **5** | **200** | **2.5%** | 🟡 Active |
+| **Total** | **Phase 1 Total** | **6** | **200** | **3.0%** | 🟡 Active |
 
 ---
 
@@ -53,3 +53,4 @@
 | `0015` | [3Sum](file:///phase_1_foundations/01_arrays_two_pointers_prefix_sums/03_0015_m_3sum/README.md) | Phase 1 | Cat 01 | Medium | 474 ms (92.9%) | 22.34 MB | `SolutionV3_TwoPointers` / `V4` | 2026-10-11 | Presorting + fixed pivot + symmetric two-pointer duplicate pruning in O(1) space |
 | `0283` | [Move Zeroes](file:///phase_1_foundations/01_arrays_two_pointers_prefix_sums/04_0283_e_move_zeroes/README.md) | Phase 1 | Cat 01 | Easy | 6 ms (45.1%) / 0 ms | 20.43 MB | `SolutionV4_OptimizedNoSelfSwap` | 2026-10-11 | Fast & Slow (Read/Write) Lomuto swap partitioning in O(1) space |
 | `0026` | [Remove Duplicates from Sorted Array](file:///phase_1_foundations/01_arrays_two_pointers_prefix_sums/05_0026_e_remove_duplicates_from_sorted_array/README.md) | Phase 1 | Cat 01 | Easy | 0 ms (100%) | 20.64 MB | `SolutionV3_TwoPointers` | 2026-10-11 | Fast & Slow (Read/Write) in-place boundary compaction in O(1) space |
+| `0027` | [Remove Element](file:///phase_1_foundations/01_arrays_two_pointers_prefix_sums/06_0027_e_remove_element/README.md) | Phase 1 | Cat 01 | Easy | 0 ms (100%) | 19.28 MB | `SolutionV3_LomutoSwap` | 2026-10-11 | Fast & Slow Lomuto swap / converging two-pointer compaction in O(1) space |
