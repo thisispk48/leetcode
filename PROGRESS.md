@@ -7,8 +7,8 @@
 
 ## 📊 High-Level Metrics
 
-* **Total Solved**: 2 / 400 (`0.5%`)
-* **Phase 1 (Foundations)**: 2 / 200 (`1.0%`)
+* **Total Solved**: 3 / 400 (`0.8%`)
+* **Phase 1 (Foundations)**: 3 / 200 (`1.5%`)
 * **Phase 2 (Speciality)**: 0 / 200 (`0.0%`)
 
 ---
@@ -17,7 +17,7 @@
 
 | # | Category | Solved | Target | Progress | Status |
 | :-: | :--- | :-: | :-: | :---: | :--- |
-| **01** | [Arrays, Two Pointers & Prefix Sums](file:///phase_1_foundations/01_arrays_two_pointers_prefix_sums/README.md) | 2 | 25 | 8.0% | 🟡 In Progress |
+| **01** | [Arrays, Two Pointers & Prefix Sums](file:///phase_1_foundations/01_arrays_two_pointers_prefix_sums/README.md) | 3 | 25 | 12.0% | 🟡 In Progress |
 | **02** | Sliding Window & Deque | 0 | 25 | 0.0% | ⚪ Not Started |
 | **03** | Fast Lookups (Hash Maps & Sets) | 0 | 25 | 0.0% | ⚪ Not Started |
 | **04** | Binary Search & Search Space | 0 | 25 | 0.0% | ⚪ Not Started |
@@ -25,7 +25,7 @@
 | **06** | Binary Trees & Traversals | 0 | 25 | 0.0% | ⚪ Not Started |
 | **07** | Heaps & Priority Queues | 0 | 25 | 0.0% | ⚪ Not Started |
 | **08** | Grid & Graph Traversal | 0 | 25 | 0.0% | ⚪ Not Started |
-| **Total** | **Phase 1 Total** | **2** | **200** | **1.0%** | 🟡 Active |
+| **Total** | **Phase 1 Total** | **3** | **200** | **1.5%** | 🟡 Active |
 
 ---
 
@@ -50,3 +50,4 @@
 | :-: | :--- | :-: | :-: | :-: | :-: | :-: | :---: | :-: | :--- |
 | `0001` | [Two Sum](file:///phase_1_foundations/01_arrays_two_pointers_prefix_sums/01_0001_e_two_sum/README.md) | Phase 1 | Cat 01 | Easy | 0 ms (100%) | 20.45 MB | `SolutionV5_SystemsOptimized` | 2026-10-10 | Single-pass hash map with pre-allocated `.reserve()` bucket optimization |
 | `0167` | [Two Sum II - Input Array Is Sorted](file:///phase_1_foundations/01_arrays_two_pointers_prefix_sums/02_0167_m_two_sum_ii_sorted_array/README.md) | Phase 1 | Cat 01 | Medium | 3 ms (87.6%) | 22.34 MB | `SolutionV4_TwoPointersOptimal` | 2026-10-11 | Converging two-pointer monotonic boundary contraction in O(1) space |
+| `0015` | [3Sum](file:///phase_1_foundations/01_arrays_two_pointers_prefix_sums/03_0015_m_3sum/README.md) | Phase 1 | Cat 01 | Medium | 474 ms (92.9%) | 22.34 MB | `SolutionV3_TwoPointers` / `V4` | 2026-10-11 | Presorting + fixed pivot + symmetric two-pointer duplicate pruning in O(1) space |
